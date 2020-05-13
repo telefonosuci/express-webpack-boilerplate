@@ -1,16 +1,16 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin'); // eslint-disable-line import/no-extraneous-dependencies
-const StyleLintPlugin = require('stylelint-webpack-plugin'); // eslint-disable-line import/no-extraneous-dependencies
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // eslint-disable-line import/no-extraneous-dependencies
+const StyleLintPlugin = require("stylelint-webpack-plugin"); // eslint-disable-line import/no-extraneous-dependencies
 
-const devMode = process.env.NODE_ENV !== 'production';
+const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
   rule: {
     test: /\.(scss|sass|css)$/,
     use: [
-      'style-loader',
-      'css-loader',
+      "style-loader",
+      "css-loader",
       {
-        loader: 'sass-loader',
+        loader: "sass-loader",
         options: {
           sourceMap: true,
         },
@@ -46,10 +46,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `[name]/[name]${devMode ? '-' : '-[contenthash]-'}bundle.css`,
+      filename: `[name]/[name]${devMode ? "-" : "-[contenthash]-"}bundle.css`,
     }),
     new StyleLintPlugin(),
   ],
-
-
 };
