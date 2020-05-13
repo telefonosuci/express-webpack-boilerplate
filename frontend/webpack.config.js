@@ -1,25 +1,31 @@
 const path = require('path');
 const scss = require('./webpack/scss');
-// webpack.config.js
+const entries = require('./webpack/entries').entry;
+const aliases = require('./webpack/aliases');
+
 module.exports = {
-    mode: 'development',
-  entry: [
-    './src/index.js'
-  ],
+  mode: 'development',
+  /*  entry: [
+      './src/index.js'
+    ],
+  */
+
+  entry: entries,
   output: {
     path: path.resolve(__dirname, '../public'),
-    filename: 'bundle.js'
+    filename: '[name]-bundle.js'
+  },
+  resolve: {
+    alias: aliases
   },
   module: {
-    rules: [
-      {
-        test: /\.js$/,
+    rules: [{
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "script-loader"
-        }
+        use: ['babel-loader', 'eslint-loader'],
       },
       scss.rule
     ]
-  }
+  },
+  plugins: [...scss.plugins],
 };

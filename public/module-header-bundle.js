@@ -81,52 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/modules/module-header/entry.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/raw-loader/index.js!./src/index.js":
-/*!************************************************!*\
-  !*** ./node_modules/raw-loader!./src/index.js ***!
-  \************************************************/
+/***/ "./src/modules/module-header/entry.js":
+/*!********************************************!*\
+  !*** ./src/modules/module-header/entry.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"// src/index.js\\ndocument.addEventListener(\\\"DOMContentLoaded\\\", function(event) {\\n  const element = document.createElement('h1')\\n  element.innerHTML = \\\"Hello World\\\"\\n  document.body.appendChild(element)\\n})\"\n\n//# sourceURL=webpack:///./src/index.js?./node_modules/raw-loader");
-
-/***/ }),
-
-/***/ "./node_modules/script-loader/addScript.js":
-/*!*************************************************!*\
-  !*** ./node_modules/script-loader/addScript.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("/*\n\tMIT License http://www.opensource.org/licenses/mit-license.php\n\tAuthor Tobias Koppers @sokra\n*/\nmodule.exports = function(src) {\n\tfunction log(error) {\n\t\t(typeof console !== \"undefined\")\n\t\t&& (console.error || console.log)(\"[Script Loader]\", error);\n\t}\n\n\t// Check for IE =< 8\n\tfunction isIE() {\n\t\treturn typeof attachEvent !== \"undefined\" && typeof addEventListener === \"undefined\";\n\t}\n\n\ttry {\n\t\tif (typeof execScript !== \"undefined\" && isIE()) {\n\t\t\texecScript(src);\n\t\t} else if (typeof eval !== \"undefined\") {\n\t\t\teval.call(null, src);\n\t\t} else {\n\t\t\tlog(\"EvalError: No eval function available\");\n\t\t}\n\t} catch (error) {\n\t\tlog(error);\n\t}\n}\n\n\n//# sourceURL=webpack:///./node_modules/script-loader/addScript.js?");
-
-/***/ }),
-
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("__webpack_require__(/*! !./node_modules/script-loader/addScript.js */ \"./node_modules/script-loader/addScript.js\")(__webpack_require__(/*! !./node_modules/raw-loader!./src/index.js */ \"./node_modules/raw-loader/index.js!./src/index.js\"))\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ 0:
-/*!****************************!*\
-  !*** multi ./src/index.js ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__(/*! ./src/index.js */\"./src/index.js\");\n\n\n//# sourceURL=webpack:///multi_./src/index.js?");
+eval("document.addEventListener(\"DOMContentLoaded\", () => {\n  console.log(\"Header loaded!\");\n});\n\n//# sourceURL=webpack:///./src/modules/module-header/entry.js?");
 
 /***/ })
 

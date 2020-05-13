@@ -1,0 +1,33 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  //"plugins": ["react", "jsx-a11y", "import", "prettier", "react-hooks"],
+  "plugins": [ "prettier"],
+  "rules": {
+    "prettier/prettier": ["error"],
+    "react/jsx-filename-extension": [0, {
+      "extensions": [".js", ".jsx"]
+    }],
+    "no-param-reassign": 0,
+    //"react-hooks/rules-of-hooks": "error",
+    //"jsx-a11y/label-has-for": 0
+  },
+  //"extends": ["airbnb", "prettier", "prettier/react"],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./webpack.config.js"
+      }
+    }
+  },
+  "globals": {
+    "ESSELUNGA": "readonly",
+    "smartedit": "readonly",
+    "Swiper": "readonly",
+    "YT": "readonly"
+  }
+}

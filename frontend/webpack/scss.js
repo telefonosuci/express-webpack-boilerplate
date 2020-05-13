@@ -7,27 +7,42 @@ module.exports = {
   rule: {
     test: /\.(scss|sass|css)$/,
     use: [
-      devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-      {
-        loader: 'css-loader',
-        options: {
-          sourceMap: true,
-          url: false,
-        },
-      },
-      {
-        loader: 'postcss-loader',
-        options: {
-          sourceMap: true,
-        },
-      },
+      'style-loader',
+      'css-loader',
       {
         loader: 'sass-loader',
         options: {
           sourceMap: true,
         },
-      },
+      }
     ],
+    /*
+        test: /\.(scss|sass|css)$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              url: false,
+              modules: true,
+              importLoaders: true
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
+    */
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -35,4 +50,6 @@ module.exports = {
     }),
     new StyleLintPlugin(),
   ],
+
+
 };
