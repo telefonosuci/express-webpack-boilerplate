@@ -14,7 +14,7 @@ module.exports = {
         options: {
           sourceMap: true,
         },
-      }
+      },
     ],
     /*
         test: /\.(scss|sass|css)$/,
@@ -23,7 +23,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
+              sourceMap: true,  
               url: false,
               modules: true,
               importLoaders: true
