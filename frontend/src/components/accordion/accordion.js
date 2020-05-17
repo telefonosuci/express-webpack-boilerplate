@@ -1,11 +1,17 @@
 //accordion.js
 class Accordion {
   constructor() {
-    this.checkoutSelector = document.querySelector("js-checkout-class");
+    this.accOpenCtrl = document.querySelector(
+      "js-netar-accordion-control-open"
+    );
+    this.accCloseCtrl = document.querySelector(
+      "js-netar-accordion-control-close"
+    );
   }
 
   init() {
-    console.log("Initializing checkout", this.colorSelectorHeader);
+    console.log("Initializing accordion controls", this.accOpenCtrl);
+    const accControlList = document.querySelectorAll(this.accOpenCtrl);
   }
 }
 
