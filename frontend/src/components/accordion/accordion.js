@@ -1,17 +1,29 @@
-//accordion.js
+import "./style.scss";
+
 class Accordion {
   constructor() {
-    this.accOpenCtrl = document.querySelector(
-      "js-netar-accordion-control-open"
-    );
-    this.accCloseCtrl = document.querySelector(
-      "js-netar-accordion-control-close"
-    );
+    this.accCtrlList = null;
+    this.accCtrlClass = ".js-netar-accordion-control";
+    this.accOpenClass = "accordion-opened";
+    this.accCloseClass = "accordion-closed";
   }
 
   init() {
-    console.log("Initializing accordion controls", this.accOpenCtrl);
-    const accControlList = document.querySelectorAll(this.accOpenCtrl);
+    this.accCtrlList = document.querySelectorAll(this.accCtrlClass);
+
+    [...this.accCtrlList].forEach((el) => {
+      el.addEventListener("click", () => {
+        const nextSibiling = el.nextElementSibling;
+
+        if (el.classList.contains(this.accCloseClass)) {
+          nextSibiling.style.display = "block";
+          el.classList.replace(this.accCloseClass, this.accOpenClass);
+        } else if (el.classList.contains(this.accOpenClass)) {
+          nextSibiling.style.display = "none";
+          el.classList.replace(this.accOpenClass, this.accCloseClass);
+        }
+      });
+    });
   }
 }
 

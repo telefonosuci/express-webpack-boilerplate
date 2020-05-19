@@ -7,7 +7,7 @@ const routes = require('./routes');
 app.set('view engine', 'html');
 app.set('views', path.join(__dirname, 'views'));
 
-app.engine('html', require('ejs').renderFile);
+app.engine('html', require('ejs-locals'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

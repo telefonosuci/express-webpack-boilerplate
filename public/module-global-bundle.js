@@ -3262,6 +3262,17 @@ eval("__webpack_require__(/*! ../modules/web.timers */ \"./node_modules/core-js/
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/accordion/style.scss":
+/*!************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2!./src/components/accordion/style.scss ***!
+  \************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"body {\\n  background-color: blue; }\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/components/accordion/style.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/style/sass/main.scss":
 /*!*************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2!./src/style/sass/main.scss ***!
@@ -3269,7 +3280,7 @@ eval("__webpack_require__(/*! ../modules/web.timers */ \"./node_modules/core-js/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".netar-global__body {\\n  background-color: green; }\\n\\n.netar-checkout__setion-address {\\n  background-color: gray; }\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/style/sass/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \".netar-global__body {\\n  background-color: green; }\\n\\n.netar-accordion-body {\\n  display: none; }\\n\\n.netar-checkout__setion-address {\\n  background-color: gray; }\\n\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack:///./src/style/sass/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ref--5-2");
 
 /***/ }),
 
@@ -3316,7 +3327,18 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"accordion\", function() { return accordion; });\n//accordion.js\nclass Accordion {\n  constructor() {\n    this.accOpenCtrl = document.querySelector(\"js-netar-accordion-control-open\");\n    this.accCloseCtrl = document.querySelector(\"js-netar-accordion-control-close\");\n  }\n\n  init() {\n    console.log(\"Initializing accordion controls\", this.accOpenCtrl);\n    const accControlList = document.querySelectorAll(this.accOpenCtrl);\n  }\n\n}\n\nconst accordion = new Accordion();\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/components/accordion/accordion.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"accordion\", function() { return accordion; });\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/components/accordion/style.scss\");\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\nclass Accordion {\n  constructor() {\n    this.accCtrlList = null;\n    this.accCtrlClass = \".js-netar-accordion-control\";\n    this.accOpenClass = \"accordion-opened\";\n    this.accCloseClass = \"accordion-closed\";\n  }\n\n  init() {\n    this.accCtrlList = document.querySelectorAll(this.accCtrlClass);\n    [...this.accCtrlList].forEach(el => {\n      el.addEventListener(\"click\", () => {\n        const nextSibiling = el.nextElementSibling;\n\n        if (el.classList.contains(this.accCloseClass)) {\n          nextSibiling.style.display = \"block\";\n          el.classList.replace(this.accCloseClass, this.accOpenClass);\n        } else if (el.classList.contains(this.accOpenClass)) {\n          nextSibiling.style.display = \"none\";\n          el.classList.replace(this.accOpenClass, this.accCloseClass);\n        }\n      });\n    });\n  }\n\n}\n\nconst accordion = new Accordion();\n/* harmony default export */ __webpack_exports__[\"default\"] = ({});\n\n//# sourceURL=webpack:///./src/components/accordion/accordion.js?");
+
+/***/ }),
+
+/***/ "./src/components/accordion/style.scss":
+/*!*********************************************!*\
+  !*** ./src/components/accordion/style.scss ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("var api = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js??ref--5-2!./style.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js?!./src/components/accordion/style.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack:///./src/components/accordion/style.scss?");
 
 /***/ }),
 
@@ -3328,7 +3350,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/polyfill */ \"./node_modules/@babel/polyfill/lib/index.js\");\n/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_polyfill__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_accordion_accordion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/accordion/accordion */ \"./src/components/accordion/accordion.js\");\n/* harmony import */ var _style_sass_main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/style/sass/main.scss */ \"./src/style/sass/main.scss\");\n/* harmony import */ var _style_sass_main_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_sass_main_scss__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  console.log(\"Loading global module!\");\n  _components_accordion_accordion__WEBPACK_IMPORTED_MODULE_1__[\"accordion\"].init();\n});\n\n//# sourceURL=webpack:///./src/modules/module-global/entry.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/polyfill */ \"./node_modules/@babel/polyfill/lib/index.js\");\n/* harmony import */ var _babel_polyfill__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_polyfill__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_sass_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/style/sass/main.scss */ \"./src/style/sass/main.scss\");\n/* harmony import */ var _style_sass_main_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_sass_main_scss__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_accordion_accordion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/accordion/accordion */ \"./src/components/accordion/accordion.js\");\n\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n  console.log(\"Loading global module!\");\n  _components_accordion_accordion__WEBPACK_IMPORTED_MODULE_2__[\"accordion\"].init();\n});\n\n//# sourceURL=webpack:///./src/modules/module-global/entry.js?");
 
 /***/ }),
 
