@@ -19,10 +19,15 @@ module.exports = {
     alias: aliases,
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader", "eslint-loader"],
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
       },
       scss.rule,
     ],
